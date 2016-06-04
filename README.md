@@ -8,15 +8,15 @@ git clone https://github.com/maxifjaved/ReactJSChallenge.git
 
 step 2: Move to repo using terminal:
 
-cd ReactJSChallenge
+`cd ReactJSChallenge`
 
 step 3: Install packages using:
 
-npm install && bower install
+`npm install && bower install`
 
 step 4: use the following command to run the project:
 
-gulp to build package
-npm run start to run server
+`gulp` to build package
+`npm run start` to run server
 
-step 5: Go to browser and visit localhost:3001
+step 5: Go to browser and visit   `localhost:3001`
