@@ -55,33 +55,6 @@ app.get('/api/items/:id', function(req, res, next) {
   });
 });
 
-app.post('/api/status', function(req, res, next) {
-  res.send({data:'data'});
-  return;
-
-  var characterId = req.body.characterId;
-
-  Character.findOne({ characterId: characterId }, function(err, character) {
-    if (err) return next(err);
-
-    if (!character) {
-      return res.status(404).send({ message: 'Character not found.' });
-    }
-
-    character.reports++;
-
-    if (character.reports > 4) {
-      character.remove();
-      return res.send({ message: character.name + ' has been deleted.' });
-    }
-
-    character.save(function(err) {
-      if (err) return next(err);
-      res.send({ message: character.name + ' has been reported.' });
-    });
-  });
-});
-
 app.use(function(req, res) {
   Router.match({ routes: routes.default, location: req.url }, function(err, redirectLocation, renderProps) {
     if (err) {
